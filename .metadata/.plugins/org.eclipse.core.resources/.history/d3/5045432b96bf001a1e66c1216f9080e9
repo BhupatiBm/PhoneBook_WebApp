@@ -1,0 +1,33 @@
+
+<script>
+$(function() {
+	  $("form[name='registration']").validate({
+		rules: {
+		  name: {
+		   required: true
+		  }
+		  email: {
+			required: true,
+			// Specify that email should be validated
+			// by the built-in "email" rule
+			email: true
+		  },
+		 contactNumber {
+			required: true,
+			length:10
+		  }
+		},
+		messages: {
+		  name: "Please enter your name",
+		  contactNumber: {
+			required: "Please provide your Contact Number",
+			length: "Your Contact Number must be contain 10 number"
+		  },
+		  email: "Please enter a valid email address"
+		},
+		submitHandler: function(form) {
+		  form.submit();
+		}
+	  });
+	});
+	</script>

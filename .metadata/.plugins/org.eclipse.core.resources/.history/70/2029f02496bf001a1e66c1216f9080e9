@@ -1,0 +1,5 @@
+@charset "ISO-8859-1";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+form .error {
+  color: #ff0000;
+}

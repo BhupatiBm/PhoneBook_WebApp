@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.bit.dao&apos; to &apos;com.bit.repository&apos;&#x0D;&#x0A;- Original project: &apos;Mini-Project-O1-PhoneBookApp&apos;&#x0D;&#x0A;- Original element: &apos;Mini-Project-O1-PhoneBookApp/src/main/java/com.bit.dao&apos;&#x0D;&#x0A;- Renamed element: &apos;Mini-Project-O1-PhoneBookApp/src/main/java/com.bit.repository&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.bit.dao&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.bit.dao" name="com.bit.repository" qualified="false" references="true" stamp="1593700009624" textual="false" version="1.0"/>
+</session>

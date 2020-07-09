@@ -1,0 +1,80 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<h1>Save Contact</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+<script >
+$(document).ready(function() {
+	  $("#registration").validate({
+	    rules: {
+	      name : {
+	        required: true,
+	        minlength: 3
+	      },
+	      
+	      email: {
+	        required: true,
+	        email: true
+	      },
+
+	      phoneNumber: {
+		        required: true,
+		        number: true,
+		        min: 10
+		      }
+	    }
+	  });
+	});
+
+messages : {
+	  name: {
+	    minlength: "Name should be at least 3 characters"
+	  },
+	  
+	  email: {
+	    email: "The email should be in the format: abc@domain.tld"
+	  },
+	  phoneNumber: {
+		    required: "Please enter your Phone Number",
+		    number: "Please enter your age as a numerical value",
+		    min: "You must be at least 10 digits"
+		  }
+	}
+</script>
+<h1 style="color: green;">${sucmsg}</h1>
+<h1 style="color: red;">${errmsg}</h1>
+</head>
+<body>
+	<form:form action="savecontact" method="post" modelAttribute="contact" id="registration">
+		<table>
+			<tr>
+				<form:hidden path="contactId"/> <td></
+				<td>Name:</td>
+				<td><form:input path="contactName" id="name"  /></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><form:input path="contactEmail" id="email" /></td>
+			</tr>
+			<tr>
+				<td>Phone Number:</td>
+				<td><form:input path="contactNumber" id="contactNumber" /></td>
+			</tr>
+
+			<tr>
+				<td><input type="reset" value="Reset"></td>
+				<td><input type="submit" value="Save"></td>
+			</tr>
+		</table>
+		<a href="viewAllContact">Get All Contacts</a>
+
+	</form:form>
+</body>
+</html>

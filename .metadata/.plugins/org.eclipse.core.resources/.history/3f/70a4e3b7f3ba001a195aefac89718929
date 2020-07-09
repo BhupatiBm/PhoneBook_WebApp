@@ -1,0 +1,15 @@
+package com.bit.controller;
+
+public class ContactInfoController {
+	
+	String loadForm(Model model) {
+		
+	}
+	String handleSubmitBtn(Contact c, Model model) {
+		
+	}
+	String handleViewContactsLink(Model model) {
+		
+	}
+
+}

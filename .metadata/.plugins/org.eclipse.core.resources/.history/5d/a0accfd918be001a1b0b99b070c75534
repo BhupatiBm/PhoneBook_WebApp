@@ -1,0 +1,60 @@
+package com.bit.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bit.entity.ContactEntity;
+import com.bit.model.Contact;
+import com.bit.repository.ContactRepository;
+@Service
+public class ContactServiceImpl implements ContactService {
+	@Autowired
+	private ContactRepository contactrepo;
+	@Override
+	public boolean saveContact(Contact c) {
+		ContactEntity entity=new ContactEntity();
+		BeanUtils.copyProperties(c, entity);
+		ContactEntity saveEntity=contactrepo.save(entity);
+		return saveEntity.getContactId()!=null;
+	}
+
+	@Override
+	public List<Contact> getAllContacts() {
+		List<Contact> contactList=new ArrayList();
+		List<ContactEntity> entities=new ArrayList();
+		//legecy approach 
+		/*for(ContactEntity entity:entities) {
+			Contact contact=new Contact();
+			BeanUtils.copyProperties(entity, contact);
+			contactList.add(contact);
+		}*/
+		
+		entities. stream().map(enttity->){
+			return "";
+		}
+		return contactList;
+	}
+
+	@Override
+	public Contact getContactById(Integer cid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updateContact(Contact c) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteContact(Integer cid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

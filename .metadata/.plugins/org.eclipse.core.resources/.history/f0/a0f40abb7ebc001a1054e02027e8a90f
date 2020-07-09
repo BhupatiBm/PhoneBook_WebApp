@@ -1,0 +1,35 @@
+package com.bit.entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+import lombok.Data;
+@Data
+@Entity
+@Table(name ="CONTACT_DTLS")
+public class ContactEntity {
+	@Id
+	@Column(name = "CONTACT_ID")
+	@SequenceGenerator(
+			name = "cid_seq_gen",
+			sequenceName = "CONTACT_ID_SEQ",
+			allocationSize = 1
+			)
+	@GeneratedValue(generator ="cid_seq_gen",
+					strategy = GenerationType.SEQUENCE
+					)
+	Integer contactId;
+	String contactName;
+	String contactEmail;
+	Long contactNumber;
+	Date createdDate;
+	Date updatedDate;
+
+}

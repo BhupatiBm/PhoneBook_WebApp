@@ -1,0 +1,35 @@
+package com.bit.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.bit.model.Contact;
+import com.bit.service.ContactService;
+@Controller
+public class ContactInfoController {
+	@Autowired
+	private ContactService contactService;
+	@GetMapping(value = {"/","/addcontact"})
+	public String loadForm(Model model) {
+		Contact c=new Contact();
+		model.addAttribute("contact",c);
+		return "contactInfo";
+		
+	}
+	@PostMapping(value = {"/savecontact"})
+	public String handleSubmitBtn(Contact c, Model model) {
+		boolean isSaved= contactService.saveContact(c);
+		if(isSaved)
+			model.addAttribute("sucmsg","rgistration done");
+		else
+			model.addAttribute("errmsg","rgistration done");
+		return "contactInfo";
+	}
+	public String handleViewContactsLink(Model model) {
+		return "viewContacts";
+	}
+
+}

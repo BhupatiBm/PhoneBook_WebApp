@@ -1,0 +1,78 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<h1>Save Contact</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.mi"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<style type="text/css" >
+      span{ color:red;    
+      }
+  </style>
+<h1 style="color: green;">${sucmsg}</h1>
+<h1 style="color: red;">${errmsg}</h1>
+</head>
+<body>
+	<form:form action="savecontact" method="post" modelAttribute="contact" name="registration">
+		<table>
+			<tr>
+				<form:hidden path="contactId"/> <td></
+				<td>Name:</td>
+				<td><form:input path="contactName" id="name"  /></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><form:input path="contactEmail" id="email" /></td>
+			</tr>
+			<tr>
+				<td>Phone Number:</td>
+				<td><form:input path="contactNumber" id="contactNumber" /></td>
+			</tr>
+
+			<tr>
+				<td><input type="reset" value="Reset"></td>
+				<td><input type="submit" value="Save"></td>
+			</tr>
+		</table>
+		<a href="viewAllContact">Get All Contacts</a>
+
+	</form:form>
+</body>
+</html>
+<script>
+$(function() {
+	  $("form[name='registration']").validate({
+		rules: {
+		  name: {
+		   required: true
+		  }
+		  email: {
+			required: true,
+			// Specify that email should be validated
+			// by the built-in "email" rule
+			email: true
+		  },
+		 contactNumber {
+			required: true,
+			length:10
+		  }
+		},
+		messages: {
+		  name: "Please enter your name",
+		  contactNumber: {
+			required: "Please provide your Contact Number",
+			length: "Your Contact Number must be contain 10 number"
+		  },
+		  email: "Please enter a valid email address"
+		},
+		submitHandler: function(form) {
+		  form.submit();
+		}
+	  });
+	});
+	</script>

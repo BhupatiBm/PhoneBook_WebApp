@@ -1,0 +1,15 @@
+package com.bit.model;
+
+import java.util.Date;
+
+import lombok.Data;
+@Data
+public class ContactEntity {
+	Integer contactId;
+	String contactName;
+	String contactEmail;
+	Long contactNumber;
+	Date createdDate;
+	Date updatedDate;
+
+}

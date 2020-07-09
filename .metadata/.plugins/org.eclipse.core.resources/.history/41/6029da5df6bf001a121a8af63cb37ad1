@@ -1,0 +1,29 @@
+
+$(function() {
+	  $("form[name='registration']").validate({
+		rules: {
+			contactId: {
+		   required: true
+		  },
+		  email: {
+			required: true,
+			email: true
+		  },
+		 contactNumber:{
+			required: true,
+			min:10
+		  }
+		},
+		messages: {
+		  name: "Please enter your name",
+		  contactNumber: {
+			required: "Please provide your Contact Number",
+			length: "Your Contact Number must be contain 10 number"
+		  },
+		  email: "Please enter a valid email address"
+		},
+		submitHandler: function(form) {
+		  form.submit();
+		}
+	  });
+	});

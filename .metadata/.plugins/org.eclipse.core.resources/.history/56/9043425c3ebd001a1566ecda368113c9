@@ -1,0 +1,20 @@
+package com.bit.controller;
+
+import org.springframework.ui.Model;
+
+import com.bit.model.Contact;
+
+public class ContactInfoController {
+	
+	String loadForm(Model model) {
+		return "";
+		
+	}
+	String handleSubmitBtn(Contact c, Model model) {
+		return "";
+	}
+	String handleViewContactsLink(Model model) {
+		return "";
+	}
+
+}

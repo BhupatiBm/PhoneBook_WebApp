@@ -1,0 +1,13 @@
+
+server:
+  port: 9898
+spring:
+  mvc:
+    view:
+      prefix: /view/
+      suffix: .jsp
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: PHNBK_LOCAL
+    password: abc
+    url: jdbc:oracle:thin:@localhost:1521/xe

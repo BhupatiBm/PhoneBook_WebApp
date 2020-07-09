@@ -1,0 +1,15 @@
+package com.bit.controller;
+
+public class ViewContactsController {
+	
+	String editContact(Integer contactId) {
+		return "";
+	}
+	String updateContact(Contact c, Model model) {
+		return "";
+	}
+	String deleteContact(Integer contactId) {
+		return "";
+	}
+
+}

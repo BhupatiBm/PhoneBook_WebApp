@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Mini-Project-O1-PhoneBookApp">
+        <property name="context-root" value="Mini-Project-O1-PhoneBookApp"/>
+    </wb-module>
+</project-modules>
